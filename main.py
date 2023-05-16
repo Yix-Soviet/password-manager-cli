@@ -20,31 +20,25 @@ menu_title = """
   * Exit (q)
 """
 
+while True:
+    print(menu_title)
+    selection = str(input("Select what you want to do: "))
 
-def main_menu() -> None:
-    while True:
-        print(menu_title)
-        selection = str(input("Select what you want to do: "))
-
-        if selection not in ["1", "2", "q"]:
-            print("Incorrect entry, select again ...")
-            sleep(2)
+    if selection not in ["1", "2", "q"]:
+        print("Incorrect entry, select again ...")
+        sleep(2)
+        system("cls" if os_name == "nt" else "clear")
+    else:
+        if selection == "1":
             system("cls" if os_name == "nt" else "clear")
-        else:
-            if selection == "1":
-                system("cls" if os_name == "nt" else "clear")
-                selector_menu("Do you want to go back? [YES/Y or NO/N]", "Returning ...", view_passwd_menu)
+            selector_menu("Do you want to go back? [YES/Y or NO/N]", "Returning ...", view_passwd_menu)
 
-            if selection == "2":
-                system("cls" if os_name == "nt" else "clear")
-                selector_menu("Do you want to go back? [YES/Y or NO/N]", "Returning ...", add_passwd_menu)
+        if selection == "2":
+            system("cls" if os_name == "nt" else "clear")
+            selector_menu("Do you want to go back? [YES/Y or NO/N]", "Returning ...", add_passwd_menu)
 
-            if selection == "q":
-                system("cls" if os_name == "nt" else "clear")
-                print("Leaving ...")
-                sleep(2)
-                exit(0)
-
-
-if __name__ == "__main__":
-    main_menu()
+        if selection == "q":
+            system("cls" if os_name == "nt" else "clear")
+            print("Leaving ...")
+            sleep(2)
+            exit(0)
